@@ -1,0 +1,39 @@
+table dim_operational_status
+	lineageTag: 61afcb51-0fb4-4a12-9f6a-4313f89e0ff7
+	sourceLineageTag: [dbo].[dim_operational_status]
+
+	column status
+		dataType: string
+		lineageTag: 6f05cb7f-5897-47a9-adf8-c1269559599b
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column responsible_department
+		dataType: string
+		lineageTag: 5ac4ce91-a5e6-489a-8ea3-7c72250b2ba1
+		sourceLineageTag: responsible_department
+		summarizeBy: none
+		sourceColumn: responsible_department
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_id
+		dataType: int64
+		formatString: 0
+		lineageTag: dc802dce-4884-4121-8ae5-f9fccd214441
+		sourceLineageTag: status_id
+		summarizeBy: none
+		sourceColumn: status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_operational_status = entity
+		mode: directLake
+		source
+			entityName: dim_operational_status
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_WindPower_Gold'
+

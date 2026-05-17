@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Lakehouse",
-    "displayName": "LH_raw"
+    "type": "Report",
+    "displayName": "WindPower_Analysis_reporting"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "52065e2f-88b9-bb60-4ff8-2327d85f91db"
+    "logicalId": "f65a16af-d233-a0cc-41b5-35885a92a06d"
   }
 }

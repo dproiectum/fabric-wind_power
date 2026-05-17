@@ -1,0 +1,87 @@
+{
+  "config": "{\"version\":\"5.73\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU05\",\"type\":2,\"version\":{\"visual\":\"2.9.0\",\"report\":\"3.3.0\",\"page\":\"2.3.1\"}}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU05",
+            "path": "BaseThemes/CY26SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspace\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}",
+      "displayName": "Daily Electricity Production",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "cab36e91325b5db621dd",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"043cacac9b62069ea212\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":67,\"z\":4,\"width\":581,\"height\":125,\"tabOrder\":4}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_WindPower.date_id\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fact_WindPower\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"date_id\"},\"Name\":\"Fact_WindPower.date_id\",\"NativeReferenceName\":\"date_id\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"date_id\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"date\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Period'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"18D\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 125.00,
+          "width": 581.00,
+          "x": 0.00,
+          "y": 67.00,
+          "z": 4.00
+        },
+        {
+          "config": "{\"name\":\"0b5ca571826b73f157b9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":814,\"y\":0,\"z\":2,\"width\":233,\"height\":192,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(Fact_WindPower.energy_produced)\"}],\"Rows\":[{\"queryRef\":\"dim_turbine.turbine_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fact_WindPower\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_turbine\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"energy_produced\"}},\"Function\":0},\"Name\":\"Sum(Fact_WindPower.energy_produced)\",\"NativeReferenceName\":\"Sum of energy_produced\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"turbine_name\"},\"Name\":\"dim_turbine.turbine_name\",\"NativeReferenceName\":\"turbine_name\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"energy_produced\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"label\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"value\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#12239E'\"}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"35D\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Turbine B - Total Production'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"379669debfb4c55b43ea\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_turbine\"}},\"Property\":\"turbine_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_turbine\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"turbine_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Turbine B'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 192.00,
+          "width": 233.00,
+          "x": 814.00,
+          "y": 0.00,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"265aa08785535d9e5150\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":192,\"z\":0,\"width\":1280,\"height\":528,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_date.date_id\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Fact_WindPower.energy_produced)\"}],\"Series\":[{\"queryRef\":\"dim_turbine.turbine_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_date\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"Fact_WindPower\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_turbine\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"date_id\"},\"Name\":\"dim_date.date_id\",\"NativeReferenceName\":\"date_id\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"energy_produced\"}},\"Function\":0},\"Name\":\"Sum(Fact_WindPower.energy_produced)\",\"NativeReferenceName\":\"Sum of energy_produced\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"turbine_name\"},\"Name\":\"dim_turbine.turbine_name\",\"NativeReferenceName\":\"turbine_name\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"date_id\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"optimizeLabelDisplay\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelContainerMaxWidth\":{\"expr\":{\"Literal\":{\"Value\":\"196D\"}}},\"labelDensity\":{\"expr\":{\"Literal\":{\"Value\":\"35L\"}}}}}],\"seriesLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"lineStyles\":[{\"properties\":{\"showMarker\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"gridlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'solid'\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Generated Electricity (kWh)'\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}],\"categoryAxis\":[{\"properties\":{\"gridlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'solid'\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Day'\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'TopCenter'\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Turbine'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Electricity Generation by Turbine (kWh)'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading3'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"22D\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 528.00,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 192.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"30542764713f7fc3468c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":581,\"y\":0,\"z\":1,\"width\":233,\"height\":192,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(Fact_WindPower.energy_produced)\"}],\"Rows\":[{\"queryRef\":\"dim_turbine.turbine_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fact_WindPower\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_turbine\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"energy_produced\"}},\"Function\":0},\"Name\":\"Sum(Fact_WindPower.energy_produced)\",\"NativeReferenceName\":\"Sum of energy_produced\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"turbine_name\"},\"Name\":\"dim_turbine.turbine_name\",\"NativeReferenceName\":\"turbine_name\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"energy_produced\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"label\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"value\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#118DFF'\"}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"35D\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Turbine A - Total Production'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"379669debfb4c55b43ea\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_turbine\"}},\"Property\":\"turbine_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_turbine\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"turbine_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Turbine A'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 192.00,
+          "width": 233.00,
+          "x": 581.00,
+          "y": 0.00,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"44c29df9792acf2e55c4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1047,\"y\":0,\"z\":3,\"width\":233,\"height\":192,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(Fact_WindPower.energy_produced)\"}],\"Rows\":[{\"queryRef\":\"dim_turbine.turbine_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fact_WindPower\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_turbine\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"energy_produced\"}},\"Function\":0},\"Name\":\"Sum(Fact_WindPower.energy_produced)\",\"NativeReferenceName\":\"Sum of energy_produced\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"turbine_name\"},\"Name\":\"dim_turbine.turbine_name\",\"NativeReferenceName\":\"turbine_name\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"energy_produced\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"label\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"value\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E66C37'\"}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"35D\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Turbine C - Total Production'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"379669debfb4c55b43ea\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_turbine\"}},\"Property\":\"turbine_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_turbine\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"turbine_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Turbine C'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 192.00,
+          "width": 233.00,
+          "x": 1047.00,
+          "y": 0.00,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"d6db9c9f13b8b704eae1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":5,\"width\":581,\"height\":67,\"tabOrder\":5}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Daily Electricity Production\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"28pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 67.00,
+          "width": 581.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 5.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
